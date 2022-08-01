@@ -1,9 +1,4 @@
-i = 0
-
-while i < 15:
-    i = i + 1
-
-    # i가 홀수이면 print(i) 안 하고 바로 조건 부분으로 돌아감
-    if i % 2 == 1:
-        continue
-    print(i)
+members = ["lee", "yun", "park", "kim"]
+# members.remove(x)는 members에서 첫 번째로 x이 값을 갖고 있는 원소를 삭제해줍니다.
+members.remove("yun")
+print(members)
