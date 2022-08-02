@@ -1,12 +1,33 @@
-numbers = [2, 3, 5, 7, 11, 13, 17, 19]
+# 사전 (dictionary) (중괄호를 열고 닫으면 사전임)
+# key-value pair (키-값 쌍)
+my_dictionary = {
+    5: 25,      # 키가 5이고 값이 25이다.
+    2: 4,
+    3: 9
+}
+print(type(my_dictionary))
+#--==>> <class 'dict'>
 
-# 리스트 뒤집기
-for left in range(len(numbers) // 2):
-    # 인덱스 left와 대칭인 인덱스 right 계산
-    right = len(numbers) - left - 1
+print(my_dictionary[3])
+#--==>> 9
 
-    # 위치 바꾸기
-    numbers[right], numbers[left] = numbers[left], numbers[right]
+# 새로운 쌍을 추가하고 싶을때
+my_dictionary[9] = 81       # 9에 81 추가
+print(my_dictionary)
+#--==>> {5: 25, 2: 4, 3: 9, 9: 81}
 
-print("뒤집어진 리스트: " + str(numbers))
-#--==>> 뒤집어진 리스트: [19, 17, 13, 11, 7, 5, 3, 2]
+# 리스트와 사전의 차이점
+# 리스트는 인덱스가 순서대로 출력 / 리스트의 인덱스는 정수값
+# 사전은 순서라는 개념이 없다. / 사전의 키는 정수형일 필요가 없다
+
+my_family = {
+    'mom': 'kim',
+    'dad': 'lee',
+    'son': 'son',
+    'daughter': 'park'
+}
+
+print(my_family)
+#--==>> {'mom': 'kim', 'dad': 'lee', 'son': 'son', 'daughter': 'park'}
+print(my_family['mom'])
+#--==>> kim
