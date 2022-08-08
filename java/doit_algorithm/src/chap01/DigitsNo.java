@@ -27,6 +27,12 @@ public class DigitsNo {
 		}
          */
 
-        System.out.println(count);
+        System.out.printf("그 수는 %d자리 입니다.", count);
     }
 }
+//--==>>
+/*
+숫자를 입력하세요 : -4
+숫자를 입력하세요 : 5
+그 수는 1자리 입니다.
+*/

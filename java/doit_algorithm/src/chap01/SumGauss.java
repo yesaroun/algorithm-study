@@ -29,3 +29,9 @@ public class SumGauss {
         System.out.printf("1부터 %d까지의 합은 %d입니다.\n", n, total);
     }
 }
+//--==>>
+/*
+1부터 n까지의 합을 구하는 프로그램
+n의 값 : 16
+1부터 16까지의 합은 136입니다.
+ */

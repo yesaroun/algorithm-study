@@ -19,3 +19,11 @@ public class TwoDigits {
         System.out.println("변수 no값은 " + no + "이 되었습니다.");
     }
 }
+//--==>>
+/*
+2자리 양수를 입력하세요.
+no값 : 3
+no값 : 123
+no값 : 23
+변수 no값은 23이 되었습니다.
+ */

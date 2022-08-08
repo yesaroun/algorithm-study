@@ -21,3 +21,9 @@ public class SumWhile {
         System.out.printf("1부터 %d까지의 합은 %d입니다.", n, sum);
     }
 }
+//--==>>
+/*
+1부터 n까지의 합을 구합니다.
+n값: 54
+1부터 54까지의 합은 1485입니다.
+ */

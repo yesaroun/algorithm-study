@@ -30,3 +30,10 @@ public class Min3{
         System.out.println("최솟값은 " + min + "입니다.");
     }
 }
+//--==>>
+/*
+first int : 45
+second int : 65
+third int : 23
+최솟값은 23입니다.
+ */

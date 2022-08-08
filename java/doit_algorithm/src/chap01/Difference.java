@@ -34,3 +34,11 @@ public class Difference {
         System.out.printf("b - a 값은 %d입니다.", b-a);
     }
 }
+//--==>>
+/*
+a값: 3
+b값: 1
+a보다 큰 값을 입력하세요!
+b값: 6
+b - a 값은 3입니다.
+*/

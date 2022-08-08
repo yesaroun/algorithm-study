@@ -17,3 +17,8 @@ public class JudgeSign {
             System.out.println("이 수는 0입니다.");
     }
 }
+//--==>>
+/*
+정수를 입력하세요.: 0
+이 수는 0입니다.
+*/
