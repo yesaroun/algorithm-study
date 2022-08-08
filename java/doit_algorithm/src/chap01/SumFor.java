@@ -9,9 +9,13 @@ public class SumFor {
         Scanner stdIn = new Scanner(System.in);
 
         System.out.println("1부터 n까지의 합을 구합니다.");
-        System.out.print("n값: ");
-        int n = stdIn.nextInt();
+        int n;
 
+        do {
+            System.out.print("n값: ");
+            n = stdIn.nextInt();
+        } while (n < 1);
+        
         int sum = 0;
 
         for (int i = 0; i <= n; i++) {
