@@ -1,35 +1,30 @@
 class User:
-    def say_hello(some_user):
-        # 인사 메세지 출력 메소드
-        print("안녕하세요! 저는 {}입니다!".format(some_user.name))
+    def __init__(self, name, email, pw):
+        # 유저 인스턴스의 모든 변수를 지정해주는 메소드
+        self.name = name
+        self.email = email
+        self.pw = pw
 
-        # say_hello는 인스턴스 변수(some_user)를 사용하기에 인스턴스 변수라고 할 수 있다.
+    def say_hello(self):
+        print("안녕하세요! 저는 {}입니다.".format(self.name))
 
+    def __str__(self):
+        return "사용자: {}, 이메일: {}, 비밀번호: ******".format(self.name, self.email)
 
-user1 = User()
-user2 = User()
-user3 = User()
+user1 = User("강연훈", "yong@naver.com", "123456")
+user2 = User("이윤수", "lee@daum.net", "456789")
 
-user1.name = "김대위"
-user1.email = 'captin@codeit.kr'
-user1.password = '12345'
-
-user2.name = '강영훈'
-user2.email = 'younghoon@codeit.kr'
-user2.password = '98777'
-
-user3.name = '최지웅'
-user3.email = 'jiwoong@codeit.kr'
-user3.password = '78945'
-
-User.say_hello(user1)
-user1.say_hello()       # 파라미터를 넘겨주지 않아도 에러가 나지 않음 이건 인스턴스 메소드의 특별한 규칙 때문
-# 윗줄은 클래스에서 메소드 호출했고 아랫줄은 인스턴스의 메소드를 호출했다.
-# 인스턴스에 메소드를 호출하면 user1인스턴스가 say_hello의 첫번째 파라미터로 자동으로 전달되서 파라미터를 따로 써줄 필요가 없다.
-# 그래서 윗줄, 아랫줄은 똑같다.
-# user1.say_hello(user1)
-# 이렇게 하면 에러 발생
-# TypeError: say_hello() takes 1 positional argument but 2 were given
-# say_hello()는 파라미터를 한개만 받는데 2개를 받았다는 에러 왜냐하면 자동으로 전달되기 때문
-
-
+print(user1)
+print(user2)
+#--==>> __str__ 메소드 작성 전
+'''
+<__main__.User object at 0x102b3bfa0>
+<__main__.User object at 0x102b3b670>
+# 인스턴스가 어떤 클래스인지 나오고 그 인스턴스가 저장된 메모리 주소가 나온다.
+'''
+# __str__(던더 str)은 프린트 함수를 호출할때 자동으로 불린다.
+#--==>> __str__ 메소드 작성 후
+'''
+사용자: 강연훈, 이메일: yong@naver.com, 비밀번호: ******
+사용자: 이윤수, 이메일: lee@daum.net, 비밀번호: ******
+'''
