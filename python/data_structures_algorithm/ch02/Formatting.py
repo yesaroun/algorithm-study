@@ -8,3 +8,13 @@ print("{0:5d} {1:7d} {2:07d} {3:<10s} {4:10.6f}".format(12, 34, 5, "Python", 123
 print("{0:5d} {1:7d} {2:07d} {3:^10s} {4:10.6f}".format(12, 34, 5, "Python", 123.4567))
 print("{0:5d} {1:7d} {2:07d} {3:>10s} {4:10.6f}".format(12, 34, 5, "Python", 123.4567))
 print("Long integer with comma at each 1000 unit : ", format(123456789, ',d'))
+#--==>>
+'''
+  123     456 0000678     Python 123.457
+   12      34 0000005 Python     123.456789
+  123     456 0000678 Python     123.457
+   12      34 0000005 Python     123.456789
+   12      34 0000005   Python   123.456700
+   12      34 0000005     Python 123.456700
+Long integer with comma at each 1000 unit :  123,456,789
+'''
