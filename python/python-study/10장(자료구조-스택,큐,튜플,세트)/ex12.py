@@ -17,7 +17,7 @@ def process(word):
 if __name__ == "__main__":
     words = set()   # 비어있는 세트를 만든다.
     f_name = input("입력 파일 이름 : ")
-    file = open(f_name, mode="r")       # 파일을 열고 일긱 모들 설정함
+    file = open(f_name, mode="r")       # 파일을 열고 읽기 모드를 설정함
 
     # 파일의 모든 줄에 대해서 반복한다.
     for line in file:
