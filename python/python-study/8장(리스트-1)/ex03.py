@@ -12,3 +12,14 @@
 # 강아지의 이름을 입력히시오(종료시에는 엔터키)
 # 강아지들의 이름:
 # 강아지의 이름은 [미나, 초롱이, 써니, 팅커벨] 입니다.
+
+check = True
+name_list = []
+
+while check:
+    name = input("강아지의 이름을 입력하시오(종료시에는 엔터키) : ")
+    if name == "":
+        print(f"강아지의 이름은 {name_list} 입니다.")
+        check = False
+    else:
+        name_list.append(name)
