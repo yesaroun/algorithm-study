@@ -14,3 +14,25 @@ s_li1 = li1[2:6]
 print("s_li1의 주소값 : ", id(s_li1))
 print("s_li1 : ", s_li1)
 # 슬라이싱 연산을 할 때, 앞의 인덱스가 생력되면 0부터 시작함을 이해하자.
+s_li2 = li1[:6]
+print("s_li1의 주소값 : ", id(s_li2))
+print("s_li2 : ", s_li2)
+
+s_li3 = li1[1:]
+print("s_li3의 주소값 : ", id(s_li3))
+print("s_li3 : ", s_li3)
+# 아래 코드는 li1의 값을 전부 촐력한다.
+print(li1[:])
+
+# 슬라이싱을 통해 값을 변경하는 내용 실습
+# 변경시에는 리스트는 하나의 리스트를 가지고 하므로 주소값의 변경은 없다.
+words = ['a', 'b', 'c', 'd', 'e']
+print(words)
+print("words의 주소값 : ", id(words))
+words[1:3] = ["B", 'C', 'D']
+print(words)
+print("words 주소값 : ", id(words))
+# 아래코드는 요소들이 다 삭제가 된다.
+words[:] = []
+print(words)
+print("words 주소값 : ", id(words))
