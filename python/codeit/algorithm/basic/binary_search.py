@@ -1,16 +1,16 @@
 def binary_search(element, some_list):
-    bool_result = True      # 반복문을 끝내기 위한 변수
-    result = None           # 결과값을 저장할 변수
-    copy_some_list = some_list
+    start_index = 0
+    end_index = len(some_list) - 1
 
-    while bool_result:
-        result = len(some_list) // 2
-        if element == result:
-            bool_result = False
-        elif element > some_list[result]:
-
-
-    return result
+    while start_index <= end_index:
+        midpoint = (start_index + end_index) // 2
+        if some_list[midpoint] == element:
+            return midpoint
+        elif some_list[midpoint] > element:
+            end_index = midpoint - 1
+        else:
+            start_index = midpoint + 1
+    return None
 
 
 print(binary_search(2, [2, 3, 5, 7, 11]))
