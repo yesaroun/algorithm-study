@@ -45,9 +45,9 @@ public class ArrayLinkedList<E> {
             if (max < size)
                 return ++max;               // 새 record를 사용
             else
-                return NULL:                // 용량 넘침(over)
+                return NULL;                // 용량 넘침(over)
         } else {
-            int rec = deleted               // 프리 리스트에서
+            int rec = deleted;              // 프리 리스트에서
             deleted = n[rec].dnext;         // 머리 rec을 꺼냄
             return rec;
         }
