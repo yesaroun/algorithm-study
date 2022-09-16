@@ -1,9 +1,11 @@
-scores = [10, 20, 30]
-values = scores[:]
-values[2] = 99
-print(scores)
+def func2(list):
+    list[0] = 99
+
+values = [0, 1, 2, 3]
+print(values)
+func2(values)
 print(values)
 '''
-[10, 20, 30]
-[10, 20, 99]
+[0, 1, 2, 3]
+[99, 1, 2, 3]
 '''
