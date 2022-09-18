@@ -23,3 +23,46 @@ def selectionSort(li):
         for j in range(i + 1, len(li)):
             if li[min_idx] > li[j]:
                 min_idx = j
+
+        if min_idx != i:    # 최소값을 찾았다면
+            print(li[min_idx], li[i], "을 교환합니다.")
+            # 두 인덱스에 해당하는 값을 서로 바꾸고 있다.
+            li[i], li[min_idx] = li[min_idx], li[i]
+            cnt += 1
+
+    print(cnt, "만큼 교환이 이루어졌습니다.")
+    return li
+
+# 버블 정렬 알고리즘
+# 인접한 두 원소를 검사하여 정렬하는 방법인데 정확도는 높다.
+# 데이터가 많아지면 질수록 속도가 떨어진다.
+def bubble_sort(li):
+    list_length = len(li)   # 길이가 10
+    for i in range(list_length - 1):
+        for j in range(list_length - i - 1):
+            # 4, 6, 1, 10
+            if li[j] > li[j+1]:
+                li[j], li[j+1] = li[j+1], li[j]
+        print(i, j, j + 1, li)
+
+if __name__ == "__main__":
+    li = [4, 6, 1, 10, 7, -7, -100, 15, 30, 15]
+    selectionSort(li)
+    print(li)
+    print("-" * 30)
+    li1 = [4, 6, 1, 10]
+    bubble_sort(li1)
+    print(li1)
+
+    rows = 3
+    cols = 15
+    s = []
+
+    for row in range(rows):
+        s += [[0] * cols]
+    print("s = ", s)
+
+    rows = 3
+    cols = 15
+    s = [([0] * cols) for row in range(rows)]   # 리스트 함축
+    print()
