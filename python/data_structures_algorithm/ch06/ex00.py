@@ -33,9 +33,14 @@ class OrderdList():
     def __str__(self):
         return str(self.elems)
 
-    # 이거 수정하기
     def index(self, elem):
-        return True
+        cur = 0
+        while cur < len(self) and self[cur] != elem:
+            cur += 1
+        if cur >= len(self):
+            return None
+        else:
+            return cur
 
 
 *data, = 53, 17, 34, 23, 15, 43
