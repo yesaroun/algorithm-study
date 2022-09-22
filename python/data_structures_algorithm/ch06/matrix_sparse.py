@@ -11,7 +11,9 @@ class Term:
         return str(self)
 
 class MatrixSparse:
-    def __init__(self, rows=0, cols=0, size=0, sparse = None):
+    def __init__(
+            self, rows=0, cols=0, size=0, sparse = None
+    ):
         self.rows = rows
         self.cols = cols
         self.size = size
@@ -21,6 +23,7 @@ class MatrixSparse:
         self.rows = len(mat)
         self.cols = len(mat[0])
 
+        # sparse 행렬 생성
         self.sparse = [
             Term(r, c, v)
             for r, row in enumerate(mat)
@@ -32,6 +35,9 @@ class MatrixSparse:
         # 여기서 for문 중첩해도 된다.
         # 하지만 이게 더 빠르다.
         # 여기에 __str__추가해야 할듯
+
+    def __str__(self):
+        return f"{self.sparse}"
 
     # 13쪽 이후 추가
     def transpose(self):
@@ -58,6 +64,8 @@ class MatrixSparse:
             sparse=sparse,
         )
 
+
+# 실행
 data = [
     [15, 0, 0, 22, 0, -15],
     [0, 11, 3, 0, 0, 0],
@@ -72,6 +80,8 @@ mat = MatrixSparse()
 mat.build_matrix_sparse(data)
 print(mat)
 
+
+print("-" * 30)
 # 13 추가
 print("transpose >> ")
 mat = mat.transpose()
