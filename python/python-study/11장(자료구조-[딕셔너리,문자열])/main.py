@@ -19,3 +19,11 @@ print(dic.keys())
 # values() : 값을 출력
 print(dic.values())
 #--==>> dict_values([1, 5, 4, 7, 2, 3])
+
+s = "Mississippi"
+print(s.split("i"))
+#--==>> ['M', 'ss', 'ss', 'pp', '']
+
+s = "  Little by little the little bird builds its nest     "
+print(s.strip())
+#--==>> Little by little the little bird builds its nest
