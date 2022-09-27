@@ -20,7 +20,7 @@ S[11] = B   S[12] = C   S[13] = D   S[14] = E   S[15] = F
 S[16] = G   
 S[0] = 0, S[-1] = G
 Traceback (most recent call last):
-  File "/Users/akor1/Documents/programing/code/algorithm/python/data_structures_algorithm/ch03/indexing_str_data.py", line 12, in <module>
+  File "/Users/akor1/Documents/programing/code/algorithm/python/data_structures/ch03/indexing_str_data.py", line 12, in <module>
     S[0] = "X"
 TypeError: 'str' object does not support item assignment
 '''
