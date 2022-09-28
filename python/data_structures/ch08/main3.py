@@ -1,4 +1,4 @@
-from data_structures.ch08.queues import Queue
+from data_structures.ch08.queues1 import Queue
 
 if __name__ == "__main__":
     N=4

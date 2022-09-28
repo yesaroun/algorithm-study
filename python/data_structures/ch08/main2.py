@@ -1,4 +1,4 @@
-from queues import Queue
+from queues1 import Queue
 
 if __name__ == "__main__":
     N=5

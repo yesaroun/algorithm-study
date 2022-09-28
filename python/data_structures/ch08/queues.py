@@ -1,57 +1,80 @@
-from arrays import Array
-
 class Queue:
-    CAPACITY = 10
-
-    def __init__(self, capacity=CAPACITY):
-        self.arr = Array(capacity)
-        self.capacity = capacity
-        self.front = self.rear = -1
-
-    def is_full(self):
-        return self.rear >= self.capacity - 1
+    def __init__(self):
+        self.items = []
 
     def is_empty(self):
-        return self.front == -1 and self.rear == -1
+        return not self.items
 
-    def enqueue(self, elem):
-        if self.is_full():
-            raise Exception("Queue is full")
+    def enqueue(self, item):
+        self.items.insert(0, item)
 
-        if self.is_empty():
-            self.front = self.rear = 0
-        else:
-            self.rear += 1
-
-        self.arr[self.rear] = elem
-
-    #
     def dequeue(self):
         if self.is_empty():
-            raise Exception("Queue is empty")
-
-        self.arr[self.front] = None
-        if self.front == self.rear and self.front != -1:
-            self.front = self.rear = -1
-        else:
-            self.front += 1
+            raise Exception("queue is empty.")
+        self.items.pop()
 
     def peek(self):
         if self.is_empty():
-            raise Exception("Queue is empty")
+            raise Exception("queue is empty.")
+        return self.items[-1]
 
-        return self.arr[self.front]
-
-    # empty인 경우는 0하고 연산식에 따르면 1이 남는다 그래서
-    # 둘다 -1인 경우는 0으로 처리한다.
     def __len__(self):
-        return 0 if self.is_empty() else self.rear - self.front + 1
+        return len(self.items)
 
     def __iter__(self):
         pos = 0
         while pos < len(self):
-            yield self.arr[pos]
-            pos += 1
+            yield self.items[pos]
+        pos += 1
 
     def __str__(self):
-        return str(self.arr)
+        return str(self.items)
+
+
+if __name__ == "__main__":
+    queue = Queue()
+    print("Len:", len(queue))
+    print("Is Empty:", queue.is_empty())
+    queue.enqueue(1)
+    queue.enqueue(2)
+    print(queue)
+    print("Len:", len(queue), queue)
+    print("Is Empty:", queue.is_empty())
+    print("Peek:", queue.peek())
+    queue.dequeue()
+    print("Peek:", queue.peek())
+    queue.dequeue()
+    print("Len:", len(queue), queue)
+    print()
+    N = 5
+    for i in range(1, N + 1):
+        queue.enqueue(i)
+        print("Len:", len(queue), queue)
+
+    while not queue.is_empty():
+        print("Peek:", queue.peek(), "Len:", len(queue), queue)
+        queue.dequeue()
+    print("Len:", len(queue), queue)
+
+'''
+Len: 0
+Is Empty: True
+[2, 1]
+Len: 2 [2, 1]
+Is Empty: False
+Peek: 1
+Peek: 2
+Len: 0 []
+
+Len: 1 [1]
+Len: 2 [2, 1]
+Len: 3 [3, 2, 1]
+Len: 4 [4, 3, 2, 1]
+Len: 5 [5, 4, 3, 2, 1]
+Peek: 1 Len: 5 [5, 4, 3, 2, 1]
+Peek: 2 Len: 4 [5, 4, 3, 2]
+Peek: 3 Len: 3 [5, 4, 3]
+Peek: 4 Len: 2 [5, 4]
+Peek: 5 Len: 1 [5]
+Len: 0 []
+'''
