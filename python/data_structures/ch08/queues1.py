@@ -25,7 +25,6 @@ class Queue:
 
         self.arr[self.rear] = elem
 
-    #
     def dequeue(self):
         if self.is_empty():
             raise Exception("Queue is empty")
