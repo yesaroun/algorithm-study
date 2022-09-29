@@ -9,14 +9,17 @@ class Postfix:
     def evaluate(self):
         stack = Stack(len(self.expr))
         ret = 0
-
         for token in self.expr.split():
             if token not in Postfix.OPS:
                 stack.push(token)
                 continue
 
+            tok_2 = int(stack.pop())
+            tok_1 = int(stack.pop())
+            eval_ = self.cal(tok_1, tok_2, token)
+            stack.push(eval_)
 
-
+        ret = stack.pop()
         return ret
 
     def cal(self, tok_1, tok_2, op):
@@ -28,6 +31,7 @@ class Postfix:
             return tok_1 * tok_2
         if op == "/":
             return tok_1 / tok_2
+
         raise Exception("Unknown operator")
 
     def __str__(self):

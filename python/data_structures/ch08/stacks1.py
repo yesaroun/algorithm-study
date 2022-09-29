@@ -12,7 +12,7 @@ class Stack1:
         return self.top >= self.capacity
 
     def is_empty(self):
-        return self.top <= 0
+        return self.top < 0
 
     def push(self, elem):
         if self.is_full():
@@ -31,7 +31,7 @@ class Stack1:
 
     def peek(self):
         if self.is_empty():
-            raise Exception("stack is full.")
+            raise Exception("stack is empty.")
 
         # return self.arr[len(self) - 1]
         return self.arr[self.top]

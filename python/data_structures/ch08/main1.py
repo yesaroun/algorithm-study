@@ -1,6 +1,6 @@
 from stacks1 import Stack1
 
-N=4
+N = 4
 stack = Stack1(N)
 
 print("Length:", len(stack))
