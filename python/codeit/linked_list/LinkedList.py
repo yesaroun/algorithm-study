@@ -13,6 +13,19 @@ class LinkedList:
         self.head = None  # 링크드 리스트의 가장 앞 노드
         self.tail = None  # 링크드 리스트의 가장 뒤 노드
 
+    def delete_after(self, previous_node):
+        """링크드 리스트 삭제연산. 주어진 노드 뒤 노드를 삭제한다."""
+        data = previous_node.next.data
+
+        # 지우려는 노드가 tail 노드일 때:
+        if previous_node.next is self.tail:
+            previous_node.next = None
+            self.tail = previous_node
+        else:
+            previous_node.next = previous_node.next.next
+
+        return data
+
     def insert_after(self, previous_node, data):
         """링크드 리스트 주어진 노드 뒤 삽입 연산 메소드"""
         new_node = Node(data)
@@ -39,6 +52,27 @@ class LinkedList:
         # 링크드 리스트 안에 원하는 데이터가 없었기 때문에 None 리턴한다
         return None
 
+    def find_node_at(self, index):
+        """링크드 리스트 접근 연산 메소드. 파라미터 인덱스는 항상 있다고 가정"""
+        iterator = self.head
+
+        for _ in range(index):
+            iterator = iterator.next
+
+        return iterator
+
+    def prepend(self, data):
+        """링크드 리스트의 가장 앞에 데이터 삽입"""
+        new_node = Node(data)
+
+        # 링크드 리스트가 비었는지 확인
+        if self.head is None:
+            self.tail = new_node
+        else:
+            new_node.next = self.head
+            # 새로운 노드의 다음 노드를 head 노드로 정해주고
+
+        self.head = new_node    # 리스트의 head_node를 새롭게 삽입한 노드를 정해준다.
 
     def append(self, data):
         """링크드 리스트 추가 연산 메소드"""
@@ -77,18 +111,22 @@ linked_list.append(2)
 linked_list.append(3)
 linked_list.append(5)
 linked_list.append(7)
+linked_list.append(11)
 
 print(linked_list)
-#--==>> | 2 | 3 | 5 | 7 |
 
-node_2 = linked_list.find_node_with_data(2)     # 인덱스 2에 있는 노드 접근
-linked_list.insert_after(node_2, 6)             # 인덱스 2 뒤에 6 삽입
-
-print(linked_list)
-#--==>> | 2 | 6 | 3 | 5 | 7 |
-
-head_node = linked_list.head    # 헤드 노드 접근
-linked_list.insert_after(head_node, 9)  # 헤드 노드 뒤에 9 삽입
+node_2 = linked_list.find_node_at(2)    # 인덱스 2노드 접근
+linked_list.delete_after(node_2)        # 인덱스 2 뒤 데이터 삭제
 
 print(linked_list)
-#--==>> | 2 | 9 | 6 | 3 | 5 | 7 |
+
+second_to_last_node = linked_list.find_node_at(2)   # 맨 끝에서 두 번째 노드 접근
+print(linked_list.delete_after(second_to_last_node)) # tail노드 삭제
+
+print(linked_list)
+"""
+| 2 | 3 | 5 | 7 | 11 |
+| 2 | 3 | 5 | 11 |
+11
+| 2 | 3 | 5 |
+"""

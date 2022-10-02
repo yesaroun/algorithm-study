@@ -17,13 +17,15 @@ class LinkedList:
         """링크드 리스트의 가장 앞에 데이터 삽입"""
         new_node = Node(data)
 
+        # 링크드 리스트가 비었는지 확인
         if self.head is None:
-            self.head = new_node
             self.tail = new_node
         else:
             new_node.next = self.head
-            self.head = new_node
+            # 새로운 노드의 다음 노드를 head 노드로 정해주고
 
+        self.head = new_node    # 리스트의 head_node를 새롭게 삽입한 노드를 정해준다.
+        
     def __str__(self):
         """링크드 리스트를 문자열로 표현해서 리턴하는 메소드"""
         res_str = "|"
