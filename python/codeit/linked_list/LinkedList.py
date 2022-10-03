@@ -61,6 +61,20 @@ class LinkedList:
 
         return iterator
 
+    def pop_left(self):
+        """링크드 리스트의 가장 앞 노드 삭제 메소드. 단, 링크드 리스트에 항상 노드가 있다고 가정한다"""
+        data = self.head.data   # 삭제할 노드를 미리 저장해놓는다.
+
+        # 지우려는 데이터가 링크드 리스트의 마지막 남은 데이터일 때
+        if self.head is self.tail:
+            self.tail = None
+            self.head = None
+        else:
+            # 링크드 리스트의 head를 지금 head의 다음 노드로 지정해준다.
+            self.head = self.head.next
+
+        return data     # 삭제된 노드의 데이터를 리턴한다.
+
     def prepend(self, data):
         """링크드 리스트의 가장 앞에 데이터 삽입"""
         new_node = Node(data)
