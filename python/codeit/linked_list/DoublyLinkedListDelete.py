@@ -16,7 +16,29 @@ class LinkedList:
 
     def delete(self, node_to_delete):
         """더블리 링크드 리스트 삭제 연산 메소드"""
-        # 코드를 쓰세요
+
+        # 링크드 리스트에서 마지막 남은 데이터를 삭제할 때
+        if node_to_delete is self.head and node_to_delete is self.tail:
+            self.tail = None
+            self.head = None
+
+        # 링크드 리스트 가장 앞 데이터 삭제할 때
+        elif node_to_delete is self.head:
+            self.head = self.head.next
+            self.head.prev = None
+
+        # 링크드 리스트 가장 뒤 데이터 삭제할 떄
+        elif node_to_delete is self.tail:
+            self.tail = self.tail.prev
+            self.tail.next = None
+
+        # 두 노드 사이에 있는 데이터 삭제할 때
+        else:
+            node_to_delete.prev.next = node_to_delete.next
+            node_to_delete.next.prev = node_to_delete.prev
+
+        # 삭제하는 노드 데이터 리턴
+        return node_to_delete.data
 
     def find_node_at(self, index):
         """링크드 리스트 접근 연산 메소드. 파라미터 인덱스는 항상 있다고 가정한다"""
