@@ -22,7 +22,7 @@ print("Total {} data input, sum of positive data = {}".format(num_data - 1, data
 '''
 Input (up to 100) integer data.
 Data (-1 to finish) = 23
-Data (-1 to finish) = -12
+Data (-1 to finish) = -ch12
 Data (-1 to finish) = 32
 Data (-1 to finish) = 43
 Data (-1 to finish) = -1

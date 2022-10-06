@@ -1,4 +1,4 @@
-# [Do it! 실습 6-12] 퀵 정렬 알고리즘 구현(비재귀적인 퀵 정렬)
+# [Do it! 실습 6-ch12] 퀵 정렬 알고리즘 구현(비재귀적인 퀵 정렬)
 
 from stack import Stack  # 실습 4C-1의 파일 import
 from typing import MutableSequence
