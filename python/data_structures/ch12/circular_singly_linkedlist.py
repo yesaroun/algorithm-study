@@ -24,7 +24,7 @@ class CircularSinglyLinkedList:
 
         if self.tail is None:
             self.tail = new_node
-            new_node.next = self.tail
+            new_node.next = new_node
         else:
             new_node.next = self.tail.next
             self.tail.next = new_node
@@ -34,60 +34,67 @@ class CircularSinglyLinkedList:
 
         if self.tail is None:
             self.tail = new_node
-            new_node.next = self.tail
+            new_node.next = new_node
         else:
             new_node.next = self.tail.next
             self.tail.next = new_node
-            self.tail = self.tail.next
+            self.tail = new_node
+
 
     def delete_tail(self):
-        if self.tail is not None:
-            temp = self.tail.next   # head
-            while temp is not self.tail:
-                temp = temp.next
-
-            temp.next = self.tail.next
-            self.tail = temp
+        if self.tail.next is not None:
+            if self.tail is self.tail.next:
+                self.tail = None
+            else:
+                temp = self.tail
+                while temp.next is not self.tail:
+                    temp = temp.next
+                temp.next = self.tail.next
+                self.tail = temp
 
     def delete_head(self):
-        if self.tail is not None:
-            self.tail.next = self.tail.next.next
+        if self.tail.next is not None:
+            if self.tail.next is self.tail:
+                self.tail = None
+            else:
+                temp = self.tail.next
+                first_node = self.tail.next
+
+                while temp.next is not self.tail.next:
+                    temp = temp.next
+
+                self.tail.next = self.tail.next.next
+                temp.next = self.tail.next
+                first_node = None
+
 
     def insert_after(self, node, node_new):
         new_node = Node(node_new)
 
-        if node is self.tail:
+        temp = self.tail
+
+        while str(temp.next) != str(node):
+            temp = temp.next
+        # temp.next = 자기 자신
+
+        if temp.next is self.tail:
             new_node.next = self.tail.next
             self.tail.next = new_node
-        elif node is self.tail.next:
-            self.tail.next.next = new_node
+            self.tail = new_node
         else:
-            new_node.next = node.next
-            node.next = new_node
-
+            new_node.next = temp.next.next
+            temp.next.next = new_node
 
     def insert_before(self, node, node_new):
         new_node = Node(node_new)
 
-        if node is self.tail:
-            temp = self.tail.next  # temp = head
-            while temp is not self.tail:
-                temp = temp.next
-            # temp = tail.prev
+        temp = self.tail
 
-            new_node.next = self.tail
-            temp.next = new_node
-        elif node is self.tail.next:
-            new_node.next = self.tail.next
-            self.tail.next = new_node
-        else:
-            temp = self.tail.next   # temp = head
-            while temp is not node:
-                temp = temp.next
-            # temp = node.prev
+        while str(temp.next) != str(node):
+            temp = temp.next
 
-            new_node.next = node
-            temp.next = new_node
+        new_node.next = temp.next
+        temp.next = new_node
 
 
     def delete(self, node):
@@ -101,22 +108,25 @@ class CircularSinglyLinkedList:
 
     def __str__(self):
         result = "["
-        iterator = self.tail.next
 
-        if iterator is not None:
-            result += str(iterator)
-            if iterator.next is not None:
-                result += ", "
-            iterator = iterator.next
+        if self.tail is not None:
+            iterator = self.tail.next
 
-        while iterator is not self.tail.next:
-            result += str(iterator)
-            iterator = iterator.next
+            if iterator is not None:
+                result += str(iterator)
+                if self.tail is not self.tail.next:
+                    result += ", "
+                iterator = iterator.next
 
-            if iterator is not self.tail.next:
-                result += ", "
+            while iterator is not self.tail.next:
+                result += str(iterator)
+                iterator = iterator.next
+
+                if iterator is not self.tail.next:
+                    result += ", "
 
         result += "]"
+
         return result
 
 
@@ -136,7 +146,7 @@ list_.delete_head()
 print("4", list_)
 
 list_.add_tail(Node(150))
-#list_.insert_before(Node(150), Node(999))
+list_.insert_before(Node(150), Node(999))
 print("5", list_)
 
 list_.add_head(Node(50))
@@ -149,5 +159,5 @@ print("7", list_)
 list_.insert_after(Node(50), Node(250))
 print("8", list_)
 
-# list_.insert_before(Node(50), Node(750))
+list_.insert_before(Node(50), Node(750))
 print("9", list_)
