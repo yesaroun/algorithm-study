@@ -11,10 +11,10 @@ print("Long integer with comma at each 1000 unit : ", format(123456789, ',d'))
 #--==>>
 '''
   123     456 0000678     Python 123.457
-   ch12      34 0000005 Python     123.456789
+   ch11      34 0000005 Python     123.456789
   123     456 0000678 Python     123.457
-   ch12      34 0000005 Python     123.456789
-   ch12      34 0000005   Python   123.456700
-   ch12      34 0000005     Python 123.456700
+   ch11      34 0000005 Python     123.456789
+   ch11      34 0000005   Python   123.456700
+   ch11      34 0000005     Python 123.456700
 Long integer with comma at each 1000 unit :  123,456,789
 '''

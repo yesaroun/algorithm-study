@@ -43,7 +43,7 @@ print()
 (9, 'September')
 (10, 'October')
 (11, 'November')
-(ch12, 'December')
+(ch11, 'December')
 
  1 January
  2 February
@@ -56,5 +56,5 @@ print()
  9 September
 10 October
 11 November
-ch12 December
+ch11 December
 '''
