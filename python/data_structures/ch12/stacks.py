@@ -1,8 +1,8 @@
-from SinglyLinkedList import SinglyLinkedList, Node
+from circular_doubly_linked_list import CircularDoublyLinkedList, Node
 
 class Stack:
     def __init__(self):
-        self.list_ = SinglyLinkedList()
+        self.list_ = CircularDoublyLinkedList()
 
     def push(self, elem):
         node = Node(elem)
@@ -10,7 +10,7 @@ class Stack:
 
     def pop(self):
         if self.is_empty():
-            raise Exception("stack is empty.")
+            raise Exception("Stack is empty")
 
         self.list_.delete_head()
 
@@ -55,3 +55,21 @@ if __name__ == "__main__":
         print("peek:", stack.peek())
         stack.pop()
         print(stack)
+
+"""
+[20, 10] 
+peek: 20 
+[10]
+[30, 10] 
+[40, 30, 10] 
+peek: 40 
+[30, 10] 
+Element: 30 
+Element: 10
+
+[30, 10] 
+peek: 30 
+[10] 
+peek: 10 
+[]
+"""

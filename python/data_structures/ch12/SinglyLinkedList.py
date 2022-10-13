@@ -112,6 +112,8 @@ class SinglyLinkedList:
                 temp.next = new_node
                 new_node.next = temp.next.next
 
+    def is_empty(self):
+        return not self.head
 
 
     def __str__(self):
