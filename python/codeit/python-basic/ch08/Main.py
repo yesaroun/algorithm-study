@@ -37,17 +37,39 @@
 
 
 # 문제4
+# def check_grade(score):
+#     check = bool
+#     grade = ""
+#
+#     try:
+#         float(score)
+#         check = True
+#     except ValueError:
+#         check = False
+#
+#     if check:
+#         score = float(score)
+#         if 0.9 <= score < 1:
+#             grade = "A"
+#         elif 0.8 <= score < 0.9:
+#             grade = "B"
+#         elif 0.7 <= score < 0.8:
+#             grade = "C"
+#         elif 0.6 <= score < 0.7:
+#             grade = "D"
+#         elif 0 <= score < 0.6:
+#             grade = "F"
+#         else:
+#             grade = "Bad score"
+#     else:
+#         grade = "Bad score"
+#
+#     return grade
+
 def check_grade(score):
-    check = bool
     grade = ""
 
-    try:
-        float(score)
-        check = True
-    except ValueError:
-        check = False
-
-    if check:
+    if 0 < score <1:
         score = float(score)
         if 0.9 <= score < 1:
             grade = "A"
@@ -61,10 +83,6 @@ def check_grade(score):
             grade = "F"
         else:
             grade = "Bad score"
-    else:
-        grade = "Bad score"
-
-    return grade
 
 grade = input("Enter score : ")
 print(check_grade(grade))
