@@ -29,7 +29,6 @@ class Tree:
                 count -= 1
                 print(") :", stack, count, num_count, check)
 
-
             else:
                 num_count += 1
                 check += 1
@@ -50,8 +49,6 @@ class Tree:
                 stack.push(i)
 
 
-
-
     class TreeNode:
         def __init__(self, elem):
             self.elem = elem
@@ -65,8 +62,6 @@ class Tree:
             return f"{self.elem}"
 
 if __name__ == "__main__":
-
-
 
     sexpr = "( A ( B ( E ( K L ) F ) C ( G ) D ( H ( M ) I J ) ) )"
     sexpr = sexpr.split()
