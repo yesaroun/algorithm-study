@@ -32,6 +32,23 @@ class Tree:
                 node.right_sibling = prev
                 prev = node
 
+            stack.pop()
+
+            # 이 경우는 root인 경우
+            if stack.is_empty():
+                root = prev
+                continue
+
+            root = stack.peek()
+            root.left_child = prev
+            stack.pop()
+            stack.push(root)
+
+        if not stack.is_empty():
+            raise Exception("expression is wrong.")
+
+        self.root = root
+
 
     class TreeNode:
         def __init__(self, elem):
