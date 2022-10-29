@@ -20,7 +20,6 @@ class BTree:
         stack = Stack()
         it = iter(sexpr)
 
-        # 현재 문제는 right를 이상한애 한다 / left는 잘 한다
         root = None
         while stack.is_empty() or it:
             try:
