@@ -1,5 +1,6 @@
 from stacks import Stack
 
+
 class TreeNode:
     def __init__(self, elem):
         self.elem = elem
@@ -14,14 +15,56 @@ class TreeNode:
         return f"{self.elem}"
 
 class BTreeBuilder:
-    # 이거하면 self쓰면 안된다
     @staticmethod
     def build(sexpr):
-        stack = Stack()
         root = None
 
+        # 메인 프로시저를 위한 스택
+        stack_proc = Stack()
+        # 서브트리를 위한 스택
+        stack_subtree = Stack()
+
+        for expr in sexpr:
+            if expr != ")":
+                stack_proc.push(TreeNode(expr))
+                continue
+
+            # case ")"
+            # ( A ( B C
+            while stack_proc.peek().elem != "(":
+                node = stack_proc.peek()
+                stack_proc.pop()
+                # print(node)
+                node = node if node.elem != "#" else None
+                stack_subtree.push(node)
+
+            # print(stack_subtree)
+
+            stack_proc.pop()    # remove "("
+            # print(stack_proc)
+            # stack에 마지막 하나만(root) 들어가 있는 경우 ( A )
+            if stack_proc.is_empty():
+                root = stack_subtree.peek()
+                stack_subtree.pop()
+            else:
+                root = stack_proc.peek()
+                stack_proc.pop()
+
+            if stack_subtree.is_empty():
+                continue
+
+            root.left_child = stack_subtree.peek()
+            stack_subtree.pop()
+            root.right_child = stack_subtree.peek()
+            stack_subtree.pop()
+            stack_proc.push(root)
+
+        # 기술한 sexpr 이 잘못되었을때 나오는 에러
+        if not stack_proc.is_empty():
+            raise Exception("expression is wrong.")
 
         return root
+
 
 class BTree:
     def __init__(self, root):
@@ -29,7 +72,6 @@ class BTree:
 
     def traverse_inorder(self):
         ret = []
-        # using recursive ...
 
         def inorder_recursive(root):
             if root is None:
@@ -40,9 +82,9 @@ class BTree:
             inorder_recursive(root.right_child)
 
         inorder_recursive(self.root)
-        return ret
 
         return ret
+
 
 if __name__ == "__main__":
     sexpr = "( + ( * ( * ( / ( A B ) C ) D ) E ) )".split()
