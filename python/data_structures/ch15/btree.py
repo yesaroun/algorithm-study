@@ -1,4 +1,5 @@
 from stacks import Stack
+from queues import Queue
 
 class TreeNode:
     def __init__(self, elem):
@@ -70,12 +71,39 @@ class BTree:
         self.root = root
 
     def traverse_levelorder(self):
-        # using recursive
-        raise NotImplemented
+
+        ret = []
+        ret.append(root)
+
+        def postorder_recursive(root):
+            if root.left_child is None:
+                return
+            ret.append(root.left_child)
+            ret.append(root.right_child)
+            postorder_recursive(root.left_child)
+
+        postorder_recursive(self.root)
+        return ret
 
     def traverse_levelorder_iterative(self):
         # using iterative
-        raise NotImplemented
+        ret = []
+        root = self.root
+        queue = Queue()
+        right_queue = Queue
+        ret.append(root)
+
+        while not queue.is_empty() or root.left_child is not None:
+            while root.left_child is not None:
+                queue.enqueue(root.left_child)
+                queue.enqueue(root.right_child)
+                root = root.left_child
+
+            node = queue.peek()
+            queue.dequeue()
+            ret.append(node)
+
+        return ret
 
 if __name__ == "__main__":
     sexpr = "( + ( * ( * ( / ( A B ) C ) D ) E ) )".split()
