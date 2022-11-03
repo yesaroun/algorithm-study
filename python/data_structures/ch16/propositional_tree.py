@@ -1,17 +1,5 @@
 from stacks import Stack
 
-class TreeNode:
-    def __init__(self, elem):
-        self.elem = elem
-
-        self.left_child = None
-        self.right_child = None
-
-    def __repr__(self):
-        return str(self)
-
-    def __str__(self):
-        return f"{self.elem}"
 
 class BTreeBuilder:
     @staticmethod
@@ -74,21 +62,25 @@ class TreeNode:
         return str(self)
 
     def __str__(self):
-        return f"{self.elem}“
+        return f"{self.elem}"
+
+class PropositionalTree:
+    def __init__(self, root):
+        self.root = root
 
     def calculate_propositional(self, *param):
         ret = None
 
         def calculate_recursive(root):
-            raise NotImplemented
+            if root is None:
+                return
+
+            calculate_recursive(root.left_child)
+            calculate_recursive(root.right_child)
+            ret = root
 
         calculate_recursive(self.root)
         return ret
-
-
-class PropositionalTree:
-    pass
-    # 이거 btree처럼 만들어야 할듯
 
 
 if __name__ == "__main__":
