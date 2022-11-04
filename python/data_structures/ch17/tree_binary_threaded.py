@@ -82,43 +82,6 @@ class ThreadedBinaryTree:
         stack = Stack()
         actions = []
 
-        for expr in sexpr:
-            if expr != ")":
-                stack.push(TreeNodeThreaded(expr))
-                continue
-
-            # case ")"
-            # ( A ( B C
-            while stack.peek().elem != "(":
-                actions.append(stack.peek())
-                stack.pop()
-
-            # print(stack_subtree)
-
-            stack.pop()    # remove "("
-            # print(stack_proc)
-            # stack에 마지막 하나만(root) 들어가 있는 경우 ( A )
-            if stack.is_empty():
-                continue
-            else:
-                root = stack.peek()
-                stack_proc.pop()
-
-            if stack_subtree.is_empty():
-                continue
-
-            root.left_child = stack_subtree.peek()
-            stack_subtree.pop()
-            root.right_child = stack_subtree.peek()
-            stack_subtree.pop()
-            stack_proc.push(root)
-
-        # 기술한 sexpr 이 잘못되었을때 나오는 에러
-        if not stack_proc.is_empty():
-            raise Exception("expression is wrong.")
-
-        return root
-
         # using inorder traversal
         # 쓰레드를 연결해야 한다 / inorder해서 리스트를 만들어 놓고 하나씩 하면서 연결해도 괜찮다
 
@@ -126,13 +89,17 @@ class ThreadedBinaryTree:
 
 
     def find_successor(self, root):
+        """원하는 노드의 successor를 찾아준다."""
         node = None
 
-
+        node = root
+        while node and node.left_child:
+            node = node.left_child
 
         return node
 
     def traverse_inorder(self):
+        """head 노드부터 시작하여 이진 스레드 트리를 중회 순행하며 출력"""
         root = self.find_successor(self.head)
         ret = []
 
