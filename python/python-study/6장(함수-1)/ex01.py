@@ -39,6 +39,6 @@ print(type(result))
 print(result)
 #--==>>
 '''
-<class 'int'>
+<class_ 'int'>
 55
 '''

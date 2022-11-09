@@ -19,11 +19,11 @@ class Foo:
 foo = Foo()
 print(type(foo), isinstance(foo, Iterable))
 '''
-<class 'list'> True
-<class 'tuple'> True
-<class 'dict'> True
-<class 'set'> True
-<class 'str'> True
-<class 'int'> False
-<class '__main__.Foo'> False
+<class_ 'list'> True
+<class_ 'tuple'> True
+<class_ 'dict'> True
+<class_ 'set'> True
+<class_ 'str'> True
+<class_ 'int'> False
+<class_ '__main__.Foo'> False
 '''

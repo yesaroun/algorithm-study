@@ -31,11 +31,10 @@ class BTreeBuilder:
             while stack_proc.peek().elem != "(":
                 node = stack_proc.peek()
                 stack_proc.pop()
-                # print(node)
                 node = node if node.elem != "#" else None
                 stack_subtree.push(node)
 
-            stack_proc.pop()    # remove "("
+            stack_proc.pop()
             if stack_proc.is_empty():
                 root = stack_subtree.peek()
                 stack_subtree.pop()

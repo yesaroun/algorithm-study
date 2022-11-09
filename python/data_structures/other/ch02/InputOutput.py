@@ -16,9 +16,9 @@ print("sum is : ", sum)
 '''
 input a data : 54
 input data a =  54
-type of a is  <class 'int'>
+type of a is  <class_ 'int'>
 input an integer data : 4
 input data b =  4
-type of b is  <class 'int'>
+type of b is  <class_ 'int'>
 sum is :  58
 '''

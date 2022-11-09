@@ -18,7 +18,7 @@ class Node:
         return str(self)
 
 class CircularDoublyLinkedList:
-    """class Doubly linked list"""
+    """class_ Doubly linked list"""
 
     def __init__(self):
         self.head = None

@@ -9,7 +9,7 @@ print(type(colors))
 #--==>>
 '''
 ('red', 'blue', 'yellow')
-<class 'tuple'>
+<class_ 'tuple'>
 '''
 
 numbers = (1, 2, 3, 4, 5)

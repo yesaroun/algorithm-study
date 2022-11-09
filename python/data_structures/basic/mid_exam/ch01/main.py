@@ -26,7 +26,7 @@ print(dir)
 # 파이썬의 키워드
 import keyword
 print(keyword.kwlist)
-#--==>> ['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+#--==>> ['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class_', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
 
 # 2진수, 8진수, 16진수도 정수형으로 분류
 

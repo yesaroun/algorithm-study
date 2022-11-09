@@ -12,7 +12,7 @@ print("\nS[0] = {}, S[-1] = {}".format(S[0], S[-1]))
 S[0] = "X"
 #--==>>
 '''
-S (type: <class 'str'>, len: 17)= 0123456789ABCDEFG
+S (type: <class_ 'str'>, len: 17)= 0123456789ABCDEFG
 S[ 0] = 0   
 S[ 1] = 1   S[ 2] = 2   S[ 3] = 3   S[ 4] = 4   S[ 5] = 5   
 S[ 6] = 6   S[ 7] = 7   S[ 8] = 8   S[ 9] = 9   S[10] = A   

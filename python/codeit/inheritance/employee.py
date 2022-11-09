@@ -72,7 +72,7 @@ print(cashier_and_deleivery_man)
 #--==>> 버거집 배달원: kim
 # 어떤 __str__ 메서드가 실행되어야 할지 애매한 상황이다.
 print(CashierDeliveryMan.mro())
-#--==>> [<class '__main__.CashierDeliveryMan'>, <class '__main__.DeliveryMan'>, <class '__main__.Cashier'>, <class '__main__.Employee'>, <class 'object'>]
+#--==>> [<class_ '__main__.CashierDeliveryMan'>, <class_ '__main__.DeliveryMan'>, <class_ '__main__.Cashier'>, <class_ '__main__.Employee'>, <class_ 'object'>]
 # 이 순서로 실행되니까 DeliveryMan 클래스가 먼저 실행되었다.
-# 만약 class CashierDeliveryMan(Cashier, DeliveryMan):
+# 만약 class_ CashierDeliveryMan(Cashier, DeliveryMan):
 # 이 순서일 경우는 Cashier 클래스가 먼저 실행된다.

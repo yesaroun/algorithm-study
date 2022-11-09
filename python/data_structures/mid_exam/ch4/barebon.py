@@ -4,7 +4,7 @@ class Barebone:
 bb = Barebone()
 
 print(type(bb))
-#--==>> <class '__main__.Barebone'>
+#--==>> <class_ '__main__.Barebone'>
 
 bb_01 = Barebone()
 print(id(bb_01))
