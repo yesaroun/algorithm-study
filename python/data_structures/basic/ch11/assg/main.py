@@ -73,17 +73,48 @@
 
 
 # 과제 5
-f = open("score2.txt")
+# f = open("score2.txt")
+#
+# data = dict()
+# score_dict = dict()
+#
+# # 파일을 딕셔너리 형태로 저장
+# for line in f:
+#     line = line.rstrip()
+#     word = line.split()
+#     data[word[0]] = int(word[1])
+#
+# for score in data:
+#     grade = ""
+#     if data[score] >= 90:
+#         grade = "A"
+#     elif data[score] >= 80:
+#         grade = "B"
+#     elif data[score] >= 70:
+#         grade = "C"
+#     elif data[score] >= 60:
+#         grade = "D"
+#     else:
+#         grade = "F"
+#
+#     score_dict[score] = grade
+#     print(score + " 학생의 성적은 " + grade + " 입니다.")
+#
+# f.close()
 
-data = dict()
+# 과제 6
 
-# 파일을 딕셔너리 형태로 저장
+f = open("weather.txt")
+weather_data = dict()
+
 for line in f:
     line = line.rstrip()
-    word = line.split()
-    data[word[0]] = int(word[1])
+    word = line.split(",")
+    # print(word)
+    weather_data[word[0]] = [word[1], word[2]]
 
-for score in data:
-    # 조건문 사용해서 계산하면 된다.
+# print(weather_data)
+for data in weather_data:
+    print("{}월의 평균기온은 {}입니다.".format(data, (float(weather_data[data][0]) + float(weather_data[data][1])) / 2))
 
 f.close()
