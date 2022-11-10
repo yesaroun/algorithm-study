@@ -8,6 +8,8 @@ def swap(tree, index_1, index_2):
 def heapify(tree, index, tree_size):
     """heapify 함수"""
 
+
+
     # 왼쪽 자식 노드의 인덱스와 오른쪽 자식 노드의 인덱스를 계산
     left_child_index = 2 * index
     right_child_index = 2 * index + 1
