@@ -64,6 +64,20 @@ class BSTree:
     def __init__(self, root):
         self.root = root
 
+    def traverse_preorder(self):
+        ret = []
+
+        def preorder_recursive(root):
+            if root is None:
+                return
+
+            ret.append(root)
+            preorder_recursive(root.left_child)
+            preorder_recursive(root.right_child)
+
+        preorder_recursive(self.root)
+        return ret
+
     def search(self, elem):
         if self.root is None:
             raise Exception("the root is none")
@@ -101,22 +115,39 @@ class BSTree:
 
         self.root = insert_recursive(self.root)
 
-    def traverse_preorder(self):
-        ret = []
-
-        def preorder_recursive(root):
-            if root is None:
-                return
-
-            ret.append(root)
-            preorder_recursive(root.left_child)
-            preorder_recursive(root.right_child)
-
-        preorder_recursive(self.root)
-        return ret
-
     def delete(self, elem):
-        raise NotImplemented
+
+        def delete_recursive(root):
+            if root is None:
+                return root
+
+            if elem < root.elem:
+                root.left_child = delete_recursive(root.left_child)
+            elif elem > root.elem:
+                root.right_child = delete_recursive(root.right_child)
+            else:
+                if root.left_child is None:
+                    temp = root.right_child
+                    root = None
+                    return temp
+                elif root.rkght_child is None:
+                    temp = root.left_child
+                    root = None
+                    return temp
+
+                current = root.right_child
+                temp_root = root
+
+                while current.left_child is not None:
+                    current = current.left_child
+
+                temp = current
+                temp_root.elem = temp.elem
+
+                temp_root.right_child = delete_recursive(temp_root.elem)
+
+            return root
+
 
 if __name__ == "__main__":
     sexpr = "( 30 ( 5 ( 2 # ) 40 ) )".split()
