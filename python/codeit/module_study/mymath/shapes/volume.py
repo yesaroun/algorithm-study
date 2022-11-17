@@ -1,4 +1,4 @@
-from codeit.module_study.shapes import PI
+from codeit.module_study.mymath.shapes import PI
 
 def sphere(radius):
     """구의 부피를 구해 주는 함수"""
