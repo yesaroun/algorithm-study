@@ -10,12 +10,14 @@ class DiGraph:
 
     # 방향성이 있으니까 indegree, outgegree 따로 해야 한다.
     def indegree(self, v):
+        """들어오는 화살표"""
         ret = 0
         for row in range(len(self)):
             ret += self[row, v]
         return ret
 
     def outdegree(self, v):
+        """나가는 화살표"""
         return sum(self.graph[v])
 
     def __getitem__(self, coords):
