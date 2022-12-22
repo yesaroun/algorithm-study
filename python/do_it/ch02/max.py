@@ -21,3 +21,5 @@ if __name__ == "__main__":
         x[i] = int(input("수 입력: "))
 
     print(f'최댓값 : {max_of(x)}')
+
+
