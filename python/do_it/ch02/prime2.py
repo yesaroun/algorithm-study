@@ -6,7 +6,7 @@ prime = [None for _ in range(501)]  # 소수를 저장하는 배열
 
 prime[0] = 2
 
-for i in range(3, 1001):
+for i in range(3, 1001, 2):
     for j in range(ptr):
         counter += 1
         if i % prime[j] == 0:
