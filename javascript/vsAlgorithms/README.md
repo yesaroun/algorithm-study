@@ -1,3 +1,5 @@
+# 기초 알고리즘
+
 - 합계 알고리즘: SumAlgorithm.js 수열, ..., 
 - 개수 알고리즘: CountAlgorithm.js, CountAlgorithm.java, CountAlgorithm.js, ...
 - 평균 알고리즘: AverageAlgorithm.js
