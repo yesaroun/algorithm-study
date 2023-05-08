@@ -1,4 +1,5 @@
 /.idea
+/algvenv  
 
 /javascript/.idea
 /python/.idea
