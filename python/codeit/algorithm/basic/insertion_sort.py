@@ -5,7 +5,7 @@
 # 5. 이 과정을 리스트의 모든 항목에 대해 반복합니다.
 
 
-def insertion_sort(arr: list[int]) -> list[int]:
+def insertion_sort2(arr: list[int]) -> list[int]:
     length: int = len(arr)
     # 배열 전체를 반복하면서
     for index_1 in range(1, length):
@@ -14,6 +14,21 @@ def insertion_sort(arr: list[int]) -> list[int]:
                 arr[index_2 + 1], arr[index_2] = arr[index_2], arr[index_2 + 1]
             else:
                 break
+    return arr
+
+
+def insertion_sort(arr: list[int]) -> list[int]:
+    # 배열 전체를 반복하면서
+    for i in range(1, len(arr)):
+        key: int = arr[i]
+
+        # 이미 정렬된 배열 부분에서 올바른 위치를 찾아가는 과정
+        j: int = i - 1
+        while j >=0 and key < arr[j] :
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+
     return arr
 
 
