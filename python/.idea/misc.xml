@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="Black">
+    <option name="enabledOnReformat" value="true" />
+    <option name="pathToExecutable" value="/Library/Frameworks/Python.framework/Versions/3.8/bin/black" />
+    <option name="sdkUUID" value="712a8b80-4ed9-41c0-aae0-158b2ac56bd1" />
+  </component>
   <component name="ExtraIconsSettingsProject">
     <option name="overrideIDESettings" value="true" />
     <option name="ignoredPattern" value="" />
     <option name="additionalUIScale" value="1.0" />
     <option name="ignoreWarnings" value="false" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10 (django-envs)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11" project-jdk-type="Python SDK" />
 </project>
