@@ -1,4 +1,4 @@
-class Queue {
+export class Queue {
   arr = [];
 
   enqueue(value) {
@@ -6,11 +6,11 @@ class Queue {
   }
 
   dequeue() {
-    return this.arr.pop();
+    return this.arr.shift();
   }
 
   peek() {
-    return this.arr.at(0);
+    return this.arr[0];
   }
 
   get length() {
@@ -18,12 +18,12 @@ class Queue {
   }
 }
 
-const queue = new Queue();
-queue.enqueue(1);
-queue.enqueue(3);
-queue.enqueue(5);
-queue.enqueue(2);
-queue.enqueue(4);   // 5
-queue.length;       // 5
-queue.dequeue();    // 1 
-queue.peek();       // 3
+// const queue = new Queue();
+// queue.enqueue(1);
+// queue.enqueue(3);
+// queue.enqueue(5);
+// queue.enqueue(2);
+// queue.enqueue(4);   // 5
+// queue.length;       // 5
+// queue.dequeue();    // 1 
+// queue.peek();       // 3
