@@ -3,7 +3,7 @@
   <component name="Black">
     <option name="enabledOnReformat" value="true" />
     <option name="pathToExecutable" value="/Library/Frameworks/Python.framework/Versions/3.8/bin/black" />
-    <option name="sdkUUID" value="712a8b80-4ed9-41c0-aae0-158b2ac56bd1" />
+    <option name="sdkName" value="Python 3.11 (python)" />
   </component>
   <component name="ExtraIconsSettingsProject">
     <option name="overrideIDESettings" value="true" />
