@@ -25,10 +25,12 @@ class Solution(object):
                     index1, index2 = index2, index1
                 return [index1, index2]
 
+
 solution = Solution()
+
 solution.twoSum([3, 2, 4], 6)
 solution.twoSum([3, 3], 6)
-solution.twoSum([-1,-2,-3,-4,-5], -8)
+solution.twoSum([-1, -2, -3, -4, -5], -8)
 
 # 61ms
 # 50ms
